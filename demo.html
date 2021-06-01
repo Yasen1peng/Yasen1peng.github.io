@@ -1,0 +1,93 @@
+<!DOCTYPE html> 
+<html lang="zh-CN"> 
+<head>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="关键词信息"> 
+  <meta name="description" content="描述信息"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>无限</title> 
+  <style>
+     *{
+       margin:0;
+       padding:0;
+       list-style: none;
+     }
+     .wrap{
+       width: 600px;
+       height: 650px;
+       border: 1px solid #ccc;
+       padding: 10px;
+       margin: 50px auto;
+     }
+     .big>img{
+       width:100%;
+       height:550px;
+     }
+     .biglist{
+       display:flex;
+       justify-content: space-between;
+       width: 100%;
+       height:100px;
+       /* background-color: #ccc; */
+     }
+     .biglist>li{
+       width: 110px;
+       height: 100%;
+       border: 1px solid transparent;
+     }
+     .biglist>.only{
+       border: 1px solid #ff7e7e;
+     }
+     .biglist>li>img{
+       width: 100%;
+       height: 100%;
+     }
+  </style>
+</head>
+<body>
+     <div class="wrap">
+          <div class="big">
+            <img src="https://c-ssl.duitang.com/uploads/blog/202103/26/20210326145154_f9b1d.thumb.1000_0.jpg" class="bigimg">
+          </div>
+          <ul class="biglist">
+              <li class="only">
+                <img src="https://c-ssl.duitang.com/uploads/blog/202103/26/20210326145154_f9b1d.thumb.1000_0.jpg" class="smallbig">
+              </li>
+              <li>
+                <img src="https://c-ssl.duitang.com/uploads/blog/202103/26/20210326145158_f6dd2.thumb.300_300_c.jpg" class="smallbig">
+              </li>
+              <li>
+                <img src="https://c-ssl.duitang.com/uploads/blog/202103/26/20210326145200_c43e1.thumb.1000_0.jpg" class="smallbig">
+              </li>
+              <li>
+                <img src="https://c-ssl.duitang.com/uploads/blog/202103/26/20210326145215_7e7d6.thumb.1000_0.jpg" class="smallbig">
+              </li>
+              <li>
+                <img src="https://c-ssl.duitang.com/uploads/blog/202103/26/20210326145211_b7f10.thumb.1000_0.jpg" class="smallbig">
+              </li>
+          </ul>
+     </div>
+     <script>
+          // 获取大的背景  
+          var big=document.querySelector('.bigimg');
+          // 获取到li的小图
+          var small =document.querySelectorAll('.smallbig');
+         
+          // 开始循环小图片数组
+          for(var i=0;i<small.length;i++){
+            // 循环点击图片
+            small[i].onclick=function(){
+              // 循环每一个li的值设置为空  
+              for(var j=0;j<small.length;j++){
+                // 选择到img的父级li值设置空
+                 small[j].parentNode.setAttribute('class','');
+              }
+               var bigsrc=this.getAttribute('src');
+               big.setAttribute('src', bigsrc);  
+              //  点击每一个img时父标签(li)添加类名
+              this.parentNode.setAttribute('class','only');
+            }
+          }
+     </script>
+</body>
+</html>
