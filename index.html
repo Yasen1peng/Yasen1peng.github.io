@@ -17,17 +17,137 @@
       text-decoration: none;
       color: black;
     }
+    html{
+      height: 100%;
+    }
+    body{
+      background: url(./img/bg.jpg)no-repeat 0/cover;
+    }
     .wrap{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
       width: 400px;
-      height:500px;
-      background-color: skyblue;
+      height: 480px;
+      background-color: white;
       margin: 200px auto;
+      opacity: .75;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .My-head-portrait{
+      width: 130px;
+      height:130px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    .My-head-portrait>img{
+      width: 100%;
+      height: 100%;
+    }
+
+    .wx-main{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 100%;
+      height: 60%;
+    }
+    .wx-user{
+      width: 100%;
+      height: 70px;
+      /* background-color: tomato; */
+      text-align: center;
+      font-family: "楷体";
+      line-height: 32px;
+      
+    }
+    .wx-user p:nth-of-type(1){
+      font-size: 22px;
+      letter-spacing:6px;
+      clear: #4c4948;
+    }
+    .wx-user p:nth-of-type(2){
+      font-size: 17px;
+      clear: #4c4948;
+    }
+    .wx-list{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 80%;
+      height: 80px;
+      /* background-color: aqua; */
+    }
+    .wx-list>li{
+      width: 100px;
+      height: 30px;
+      /* background-color: tomato; */
+      font-family: "楷体";
+      text-align: center;
+      line-height: 30px;
+    }
+
+    .follow{
+      width: 80%;
+      height: 130px;
+      /* background-color: #4c4948; */
+    }
+    .follow>li:nth-of-type(1){
+      width: 100%;
+      height: 50px;
+      background-color: #49B1F5;
+    }
+    .follow>li:nth-of-type(1) a{
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      line-height: 50px;
+      font-size: 20px;
+      font-family: "楷体";
+      color: white;
+    }
+
+    .follow>li:nth-of-type(2){
+      width: 100%;
+      height: 50px;
+      /* background-color: #FF7242; */
+      text-align: center;
+      line-height: 50px;
     }
   </style>
 </head>
 <body>
    <div class="wrap">
-     我是个容器
+     <!-- 头像 -->
+        <div class="My-head-portrait">
+           <img src="./img/1.gif" alt="">
+        </div>
+        <div class="wx-main">
+          <div class="wx-user">
+            <p>Perry</p>
+            <p>生活追求者，艺术梦想家</p>
+          </div>
+          <ul class="wx-list">
+              <li>文章</li>
+              <li>作品</li>
+              <li>旅行</li>
+              <li>1w+</li>
+              <li>30</li>
+              <li>20</li>
+          </ul>
+          <ol class="follow">
+             <li>
+               <a href="">快关注我吧</a>
+             </li>
+             <li>
+                <p>我这里是图标</p>
+             </li>
+          </ol>
+        </div>
    </div>
 </body>
 </html>
